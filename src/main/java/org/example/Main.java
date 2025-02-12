@@ -1,4 +1,7 @@
 package org.example;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.Scanner;
 import java.util.regex.*;
 
 public class Main {
@@ -14,6 +17,23 @@ public class Main {
         }
 
         Pracovni.obsahuje(text, rv);
+
+        String content = null;
+        URLConnection connection = null;
+        try {
+            connection =  new URL("https://www.upce.cz").openConnection();
+            Scanner scanner = new Scanner(connection.getInputStream());
+            scanner.useDelimiter("\\Z");
+            content = scanner.next();
+            scanner.close();
+        }catch ( Exception ex ) {
+            ex.printStackTrace();
+        }
+//        System.out.println(content);
+
+        rv = "https:\\/\\/[a-zA-z0-9._\\-\\/\\?\\=\\&]*";
+
+        Pracovni.vypisVzor(content, rv);
 
 
     }

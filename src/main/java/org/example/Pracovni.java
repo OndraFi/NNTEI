@@ -16,4 +16,11 @@ public class Pracovni {
             System.out.println(m.group());
         }
     }
+    static void vypisVzor(String text, String rv){
+        Pattern p = Pattern.compile(rv);
+        Matcher m = p.matcher(text);
+        while(m.find()){
+            System.out.println("Nalezeno: "+m.group());
+        }
+    }
 }
