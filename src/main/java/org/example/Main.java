@@ -1,11 +1,12 @@
 package org.example;
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
-
+import automat.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String rv = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}";
 
         String text = "asdf asdfff  peparak@gmail.com asdfffffffffffffffff kkkfkf bombastic@gmail.com kfk kfk ";
@@ -43,7 +44,12 @@ public class Main {
         System.out.println(textDatumEn);
 
 
-
+        System.out.println(Jazyk.jeIdentifikator("Ahoj1"));
+        System.out.println(Jazyk.jeCisloBezZnamenka("1234"));
+        System.out.println(Jazyk.jeCeleCislo("+1234"));
+        System.out.println(System.getProperty("user.dir"));
+        Automat a = new Automat("automat2.txt");
+        System.out.println(a.pravidla[0][1]);
 
     }
 }
