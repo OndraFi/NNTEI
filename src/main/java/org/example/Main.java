@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
-import automat.*;
+import org.example.automat.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -48,8 +48,9 @@ public class Main {
         System.out.println(Jazyk.jeCisloBezZnamenka("1234"));
         System.out.println(Jazyk.jeCeleCislo("+1234"));
         System.out.println(System.getProperty("user.dir"));
-        Automat a = new Automat("automat2.txt");
-        System.out.println(a.pravidla[0][1]);
+        Automat a = new Automat("automat5.txt");
+//        System.out.println(a.pravidla[0][1]);
+        System.out.println(a.test("id<=12.5"));
 
     }
 }

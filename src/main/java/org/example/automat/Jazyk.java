@@ -1,4 +1,4 @@
-package automat;
+package org.example.automat;
 
 public class Jazyk {
     static char ctiZnak(String retezec, int pozice){
