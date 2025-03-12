@@ -67,6 +67,6 @@ public class Main {
         System.out.println(z1.vyber());
         System.out.println(z1.vyber());
 
-
+        ZasobnikovyAutomat.testZavorek();
     }
 }
