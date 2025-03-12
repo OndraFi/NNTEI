@@ -3,39 +3,45 @@ package org.example.automat;
 public class Zasobnik<T> {
     Node vrchol;
 
-    private class Node{
+    private class Node {
         T data;
         Node dalsi;
 
-        Node(T data, Node dalsi){
-            data = data;
-            dalsi = dalsi;
+        Node(T data, Node dalsi) {
+            this.data = data;
+            this.dalsi = dalsi;
         }
+
+
     }
 
-    Zasobnik() {
+    public Zasobnik() {
         vrchol = null;
     }
 
-    boolean jePrazdny(){
+    public boolean jePrazdny() {
+        if (vrchol == null) {
+            return false;
+        }
         return true;
     }
 
-    void pridej(T prvek){
-        if(vrchol == null){
+    public void pridej(T prvek) {
+        if (vrchol == null) {
             vrchol = new Node(prvek, null);
-        }else{
+        } else {
             Node n = new Node(prvek, vrchol);
             vrchol = n;
         }
     }
-    T vyber(){
+
+    public T vyber() {
         Node v = vrchol;
         Node predchozi = vrchol.dalsi;
-        if(predchozi != null){
+        if (predchozi != null) {
             vrchol = predchozi;
-        }
-        return vrchol.data;
+        } else vrchol = null;
+        return v.data;
     }
 
 }
