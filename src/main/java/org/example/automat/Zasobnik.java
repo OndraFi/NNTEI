@@ -11,36 +11,23 @@ public class Zasobnik<T> {
             this.data = data;
             this.dalsi = dalsi;
         }
-
-
-    }
-
-    public Zasobnik() {
-        vrchol = null;
     }
 
     public boolean jePrazdny() {
-        if (vrchol == null) {
-            return false;
-        }
-        return true;
+        return vrchol != null;
     }
 
     public void pridej(T prvek) {
         if (vrchol == null) {
             vrchol = new Node(prvek, null);
         } else {
-            Node n = new Node(prvek, vrchol);
-            vrchol = n;
+            vrchol = new Node(prvek, vrchol);
         }
     }
 
     public T vyber() {
         Node v = vrchol;
-        Node predchozi = vrchol.dalsi;
-        if (predchozi != null) {
-            vrchol = predchozi;
-        } else vrchol = null;
+        vrchol = vrchol.dalsi;
         return v.data;
     }
 
