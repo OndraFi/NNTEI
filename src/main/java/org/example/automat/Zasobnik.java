@@ -14,7 +14,7 @@ public class Zasobnik<T> {
     }
 
     public boolean jePrazdny() {
-        return vrchol != null;
+        return vrchol == null;
     }
 
     public void pridej(T prvek) {
