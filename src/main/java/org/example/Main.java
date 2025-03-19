@@ -68,5 +68,8 @@ public class Main {
         System.out.println(z1.vyber());
 
         ZasobnikovyAutomat.testZavorek();
+
+
+        Postfix.dejVysledekVyrazu("3 5 + 2 * 3 2 / -");
     }
 }
